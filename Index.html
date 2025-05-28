@@ -35,6 +35,80 @@
     }
 
     label {
-      font-w
+      font-weight: 600;
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    input[type="submit"] {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      background-color: #0070d2;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #005bb5;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-wrapper">
+  <h2>Submit a Support Case</h2>
+  <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DgL000003QyQD" method="POST">
+
+    <input type="hidden" name="orgid" value="00DgL000003QyQD">
+    <input type="hidden" name="retURL" value="http://">
+
+    <!-- Optional Debugging -->
+    <!--
+    <input type="hidden" name="debug" value="1">
+    <input type="hidden" name="debugEmail" value="er.nitishchoudhary15@gmail.com">
+    -->
+
+    <label for="name">Contact Name</label>
+    <input id="name" maxlength="80" name="name" type="text" required>
+
+    <label for="email">Email</label>
+    <input id="email" maxlength="80" name="email" type="text" required>
+
+    <label for="phone">Phone</label>
+    <input id="phone" maxlength="40" name="phone" type="text">
+
+    <label for="subject">Subject</label>
+    <input id="subject" maxlength="80" name="subject" type="text" required>
+
+    <label for="description">Description</label>
+    <textarea name="description" required></textarea>
+
+    <input type="submit" name="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
+
 
 
